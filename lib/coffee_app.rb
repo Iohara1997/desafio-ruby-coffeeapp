@@ -1,15 +1,13 @@
 # Put your code here!
-require 'classes/payment'
+require 'classes/drink'
 class CoffeeApp
   def self.call(prices_json, orders_json, payments_json)
-    payments_list = []
-    JSON.parse(payments_json).each do |payment|
-      payments_list.push(Payment.new(payment['user'], payment['account']))
-    end
-    payments_list
-    payment_list = payments_list
-    return payment_list.to_json
 
+    drink_name = JSON.parse(prices_json)
+    name = drink_name[0]["drink_name"]
+    price = drink_name[0]["prices"]
+    drink_list = Drink.new(name, price)
+    puts drink_list
   end
 end
 
