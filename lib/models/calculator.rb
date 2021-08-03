@@ -1,4 +1,6 @@
 class Calculator
+    attr_reader :user
+
     def initialize(user)
         @user = user 
     end 
@@ -11,14 +13,14 @@ class Calculator
 
     def total_order()
         count = 0
-    # .each, while ou if?
+        @user.order_list.each { |order| count += order.drink.prices[order.size] }
 
         @price_total = count
     end
 
     def total_payment()
         count = 0
-    # .each, while ou if?
+        @user.payment_list.each { |order| count += order.account }
         
         @current_payment = count 
     end
