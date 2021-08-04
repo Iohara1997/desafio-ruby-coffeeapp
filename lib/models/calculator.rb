@@ -9,6 +9,7 @@ class Calculator
         total_order()
         total_payment()
         calculate_result()
+        user_result()
     end
 
     def total_order()
@@ -26,6 +27,17 @@ class Calculator
     end
     
     def calculate_result
-        @result = @price_total - @current_payment
+        @balance = @price_total - @current_payment
     end
         
+    def user_result 
+        result = {}
+
+        result['user'] = @user.user_name
+        result['order_total'] = @total_order
+        result['payment_total'] = @total_payment
+        result['balance'] = @balance
+
+        result 
+    end
+end
