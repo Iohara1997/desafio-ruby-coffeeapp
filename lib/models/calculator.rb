@@ -1,5 +1,5 @@
 class Calculator
-    attr_reader :user
+    attr_reader :user, :@price_total, :@current_payment, :@balance
 
     def initialize(user)
         @user = user 
