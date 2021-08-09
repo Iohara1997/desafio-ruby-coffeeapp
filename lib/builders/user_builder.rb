@@ -8,7 +8,9 @@ class UserListBuilder
         user_list = build_user_list(user_list, order_list, payment_list)
 
         user_list
-      end
+    end
+
+    private
 
     def build_users(order_list) # método para pegar os usuários do order_list
         users = []
@@ -26,7 +28,7 @@ class UserListBuilder
         user_list
     end
 
-    def build_user_list(user_list, order_list, payment_list) # método que irá setar orders e payments no user_list
+    def build_user_list(user_list, order_list, payment_list) # método que irá setar orders e payments no user_list(métodos class User)
         user_list.each do |user|
             user.set_order_list(order_list)
             user.set_payment_list(payment_list)

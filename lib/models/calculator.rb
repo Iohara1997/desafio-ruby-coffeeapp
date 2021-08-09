@@ -12,6 +12,8 @@ class Calculator
         user_result()
     end
 
+    private 
+    
     def total_order()
         count = 0
         @user.order_list.each { |order| count += order.drink.prices[order.size] }
