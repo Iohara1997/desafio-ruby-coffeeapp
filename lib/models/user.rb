@@ -7,13 +7,13 @@ class User
         @payments = payments
     end 
 
-    def order_list(orders)
+    def set_order_list(orders)
         orders.each do |order|
             @orders.push(order) if @user_name == order.user
         end
     end
 
-    def payment_list(payments)
+    def set_payment_list(payments)
         payments.each do |payment|
             @payments.push(payment) if @user_name == payment.user
         end

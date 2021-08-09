@@ -1,6 +1,7 @@
 require 'models/order'
 
-class OrderListBuilder(orders_json, drink_list)
+class OrderListBuilder
+    def order_list_builder(orders_json, drink_list)
     order_list = []
 
     JSON.parse(orders_json).each |order|
