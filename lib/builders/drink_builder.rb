@@ -7,7 +7,6 @@ class DrinkListBuilder
         JSON.parse(prices_json).each do |drink|
             drink_list.push(Drink.new(drink['drink_name'], drink['prices']))
         end 
-
         drink_list
     end
 end

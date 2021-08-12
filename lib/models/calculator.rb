@@ -1,5 +1,5 @@
 class Calculator
-    attr_reader :user, :@price_total, :@current_payment, :@balance
+    attr_reader :user, :price_total, :current_payment, :balance
 
     def initialize(user)
         @user = user 
@@ -16,15 +16,13 @@ class Calculator
     
     def total_order()
         count = 0
-        @user.order_list.each { |order| count += order.drink.prices[order.size] }
-
+        @user.orders.each { |order| count += order.drink.prices[order.size] }
         @price_total = count
     end
 
     def total_payment()
         count = 0
-        @user.payment_list.each { |order| count += order.account }
-        
+        @user.payments.each { |order| count += order.account }
         @current_payment = count 
     end
     
@@ -36,10 +34,9 @@ class Calculator
         result = {}
 
         result['user'] = @user.user_name
-        result['order_total'] = @total_order
-        result['payment_total'] = @total_payment
+        result['order_total'] = @price_total
+        result['payment_total'] = @current_payment
         result['balance'] = @balance
-
         result 
     end
 end
