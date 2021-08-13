@@ -37,6 +37,6 @@ class Calculator
         result['order_total'] = @price_total
         result['payment_total'] = @current_payment
         result['balance'] = @balance
-        result 
+        result
     end
 end

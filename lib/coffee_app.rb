@@ -18,7 +18,7 @@ class CoffeeApp
       user_result = Calculator.new(user)
       result.push(user_result.user_debt())
     }
-
+    result = result.uniq
     result.to_json
 
   end
