@@ -16,8 +16,9 @@ class UserListBuilder
         order_list.each do |order|
           users.push(order.user)
         end 
+
         users
-      end 
+    end
   
     def build_list(users) 
         user_list = []
@@ -35,5 +36,3 @@ class UserListBuilder
         user_list
     end
 end
-  
-      
