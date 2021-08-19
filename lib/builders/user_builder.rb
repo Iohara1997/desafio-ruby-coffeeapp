@@ -24,7 +24,7 @@ class UserListBuilder
         user_list = []
         users.each do |user|
           user_list.push(User.new(user))
-        end  
+        end
         user_list
     end
 

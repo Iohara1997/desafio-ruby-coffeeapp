@@ -16,7 +16,11 @@ class Calculator
     
     def total_order()
         count = 0
-        @user.orders.each { |order| count += order.drink.prices[order.size] }
+        @user.orders.each do |order|
+            if !order.drink.prices[order.size].nil?
+                count += order.drink.prices[order.size]
+            end
+        end
         @price_total = count.round(2)
     end
 
