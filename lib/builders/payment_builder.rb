@@ -5,7 +5,9 @@ class PaymentListBuilder
         payment_list = []
 
         JSON.parse(payments_json).each do |payment|
-            payment_list.push(Payment.new(payment['user'], payment['amount']))
+            if !payment['user'].nil? and !payment['amount'].nil?
+                payment_list.push(Payment.new(payment['user'], payment['amount']))
+            end
         end 
 
         payment_list
