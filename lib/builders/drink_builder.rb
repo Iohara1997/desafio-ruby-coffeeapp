@@ -5,7 +5,9 @@ class DrinkListBuilder
         drink_list = []
 
         JSON.parse(prices_json).each do |drink|
-            drink_list.push(Drink.new(drink['drink_name'], drink['prices']))
+            if !drink['drink_name'].nil? and !drink['prices'].nil?
+                drink_list.push(Drink.new(drink['drink_name'], drink['prices']))
+            end
         end 
         drink_list
     end
