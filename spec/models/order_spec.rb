@@ -1,7 +1,7 @@
 require 'models/order'
 
 describe Order do
-    it 'Order object creation' do
+    it 'object creation' do
         user_name = "coach"
         drink_name = "long black"
         drink_size = "medium"
