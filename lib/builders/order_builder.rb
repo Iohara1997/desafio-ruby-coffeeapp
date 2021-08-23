@@ -6,8 +6,10 @@ class OrderListBuilder
 
         JSON.parse(orders_json).each do |order|
             drink_list.each do |drink|
-                if (order["drink"] == drink.name)
-                    order_list.push(Order.new(order['user'], drink, order['size']))
+                if !order['user'].nil? and !drink.nil? and !order['size'].nil?
+                    if (order["drink"] == drink.name)
+                        order_list.push(Order.new(order['user'], drink, order['size']))
+                    end
                 end
             end
         end
