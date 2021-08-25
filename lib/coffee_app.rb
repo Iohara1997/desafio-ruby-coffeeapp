@@ -14,18 +14,17 @@ class CoffeeApp
 
     result = []
 
-    user_list.each { |user|
+    user_list.each do |user|
       user_result = Calculator.new(user)
-      result.push(user_result.user_debt())
-    }
+      result.push(user_result.user_debt)
+    end
     result = result.uniq
     result.to_json
-
   end
 
   def self.drink_list_builder(prices_json)
     DrinkListBuilder.new.drink_list_builder(prices_json)
-  end 
+  end
 
   def self.order_list_builder(orders_json, drink_list)
     OrderListBuilder.new.order_list_builder(orders_json, drink_list)
